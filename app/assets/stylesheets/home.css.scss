@@ -1,1 +1,9 @@
-home.css.scss
+.nav {
+	list-style-type: none;
+	float: right;
+	width: 40em;
+	
+	li {
+		display: inline;
+	}
+}
