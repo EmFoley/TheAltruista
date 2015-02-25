@@ -31,7 +31,23 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
+  # Since we turned the transactional_fixtures off, we have to find a way to clean the test database after each run, otherwise our test database will be ever growing and will give us unpredictable results.
+  config.before(:suite) do
+      # database cleaner offers us multiple strategies, including :transaction. The nice thing about using transactions, they are fast, but like I mentioned above, they won't work with capybara and selenium. So here we tell database cleaner to use truncation: basically truncate the database after each run. This will make our tests run slower and there are clever ways to conditionally switch between strategies depending on the type of test. For exmaple: use transaction strategy except with capybara, use truncation. We won't bother wourselves with that for now, we will use truncation for everything. Take a minute and read about conditionally switching strategies: http://weilu.github.io/blog/2012/11/10/conditionally-switching-off-transactional-fixtures/
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+
+  config.infer_base_class_for_anonymous_controllers = false
+  config.order = "random"
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
