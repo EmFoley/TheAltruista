@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'products#index'
+
+  resources :products, only: [:show]
+
+  StaticPagesController.action_methods.each do |action|
+      get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
+  end
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
