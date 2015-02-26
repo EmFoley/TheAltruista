@@ -4,4 +4,10 @@ class Charity < ActiveRecord::Base
 
 	has_many :products
 
+	private
+
+	def charity_params
+		params.require(:charity).permit(:name, :mission, :website)
+	end
+
 end
