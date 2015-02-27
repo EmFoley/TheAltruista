@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'products#index'
 
-  resources :products, only: [:show]
+  resources :products, only: [:show] 
+  resources :charities, only: [ :index, :show]
+
 
   StaticPagesController.action_methods.each do |action|
       get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
