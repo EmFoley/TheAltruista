@@ -4,6 +4,7 @@ class Products < ActiveRecord::Migration
   		t.string :name
   		t.string :category
   		t.string :website
+      t.string :image
   		t.decimal :price
 
   		t.belongs_to :maker, index: true

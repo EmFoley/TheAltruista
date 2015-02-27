@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150225222423) do
     t.string   "name"
     t.string   "category"
     t.string   "website"
+    t.string   "image"
     t.decimal  "price"
     t.integer  "maker_id"
     t.integer  "charity_id"
