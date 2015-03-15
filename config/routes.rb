@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#index'
+  root 'static_pages#index'
 
-  resources :products, only: [:show] 
+  resources :products, only: [:index,:show] 
   resources :charities, only: [ :index, :show]
 
 
