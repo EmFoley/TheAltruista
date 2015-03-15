@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+}
+
+#logo {
+	float: left;
+}
+
+#logo p {
+		font-family: 'Enriqueta', serif;
+		font-weight: bold;
+		font-size: 1.5em;
+		margin: 0;
+	}
+
+#logo h3 {
+	 	font-family: 'Great Vibes', cursive;
+	 	margin: 0;
+	}
+
+
+.nav {
+	list-style-type: none;
+	float: right;
+	width: 40em;
+}
+
+.nav li  {
+		display: inline;
+		font-family: 'Enriqueta', serif;
+	}
+
+#header {
+	height: 15em;
+	background: #FFFFFF;
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+}
+
+#background-top {
+	background: url('Naturally_dyed_skeins.png');
+	background-repeat: no-repeat;
+	height: 100em;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+
