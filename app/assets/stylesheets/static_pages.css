@@ -4,6 +4,9 @@ body {
 
 #logo {
 	float: left;
+	position: relative;
+	left: 5em;
+	top: 2em;
 }
 
 #logo p {
@@ -16,6 +19,7 @@ body {
 #logo h3 {
 	 	font-family: 'Great Vibes', cursive;
 	 	margin: 0;
+	 	text-align: center;
 	}
 
 
@@ -23,16 +27,20 @@ body {
 	list-style-type: none;
 	float: right;
 	width: 40em;
+	position: relative;
+	top: 2em;
+	left: 2em;
 }
 
 .nav li  {
 		display: inline;
 		font-family: 'Enriqueta', serif;
+		padding-right: 0.7em;
 	}
 
 #header {
-	height: 15em;
-	background: #FFFFFF;
+	height: 10em;
+	background-color: rgba(255,255,255,0.7);
 	z-index: 2;
 	position: fixed;
 	width: 100%;
