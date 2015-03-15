@@ -11,9 +11,10 @@
  * file per style scope.
  *
  *= require_self
+ *= require_static_pages
  */
 
- @import "home.css.scss";
+ @import "static_pages.css.scss";
 
 a {
 	text-decoration: none;
